@@ -18,12 +18,6 @@ namespace Practise2.Models
             Id = _id;
         }
 
-        //public User(string email, string password) : this()
-        //{
-        //    Email = email;
-        //    Password = password;
-        //}
-
         public bool PasswordChecker(string password)
         {
             bool isUpper = false;

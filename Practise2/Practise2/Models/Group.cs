@@ -19,13 +19,7 @@ namespace Practise2.Models
                 }
             }
         }
-        private Student[] _students;
-
-        //public Group(string groupNo, int studentLimit)
-        //{
-        //    GroupNo = groupNo;
-        //    StudentLimit = studentLimit;
-        //}
+        private Student[] _students = new Student[0];
 
         public bool CheckGroupNo(string groupNo)
         {
@@ -59,7 +53,7 @@ namespace Practise2.Models
         {
             if (_students.Length < StudentLimit)
             {
-                Array.Resize(ref _students, _students.Length);
+                Array.Resize(ref _students, _students.Length + 1);
                 _students[_students.Length - 1] = student;
             }
             else
@@ -76,7 +70,7 @@ namespace Practise2.Models
                 {
                     if (student.Id == studentId)
                     {
-                        Console.WriteLine(student);
+                        Console.WriteLine(student.FullName);
                     }
                 }
             }
@@ -89,9 +83,9 @@ namespace Practise2.Models
 
         public void GetAllStudents()
         {
-            foreach (var item in _students)
+            foreach (Student student in _students)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(student.FullName);
             }
         }
 
